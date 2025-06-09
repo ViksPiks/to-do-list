@@ -27,4 +27,54 @@ const tasks = [
   },
 ];
 
-(function (arrOfTasks) {})(tasks);
+const objOfTasks = tasks.reduce((acc, task) => {
+  acc[task._id] = task;
+  return acc;
+}, {});
+
+/* begin of READ */
+function createTaskElement({ title, body }) {
+  const li = document.createElement("li");
+  li.classList.add(
+    "list-group-item",
+    "d-flex",
+    "align-items-center",
+    "flex-wrap",
+    "mt-2"
+  );
+  const span = document.createElement("span");
+  span.textContent = title;
+  span.style.fontWeight = "bold";
+  const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "Delete task";
+  deleteBtn.classList.add("btn", "btn-danger", "ml-auto", "delete-btn");
+
+  const paragraph = document.createElement("p");
+  paragraph.textContent = body;
+  paragraph.classList.add("mt-2", "w-100");
+
+  li.append(span, deleteBtn, paragraph);
+
+  return li;
+}
+
+const listContainer = document.querySelector(".tasks-list-section .list-group");
+
+function renderAllTasks(tasksObj) {
+  if (!tasksObj) {
+    console.error("add task list");
+    return;
+  }
+
+  const fragment = document.createDocumentFragment();
+
+  Object.values(tasksObj).forEach((task) => {
+    const li = createTaskElement(task);
+    fragment.appendChild(li);
+  });
+
+  listContainer.appendChild(fragment);
+}
+
+renderAllTasks(objOfTasks);
+/* end of READ */
