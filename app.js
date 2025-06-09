@@ -33,7 +33,7 @@ const objOfTasks = tasks.reduce((acc, task) => {
 }, {});
 
 /* begin of READ */
-function createTaskElement({ title, body }) {
+function createTaskElement({ _id, title, body }) {
   const li = document.createElement("li");
   li.classList.add(
     "list-group-item",
@@ -42,6 +42,8 @@ function createTaskElement({ title, body }) {
     "flex-wrap",
     "mt-2"
   );
+  li.setAttribute("data-task-id", _id);
+
   const span = document.createElement("span");
   span.textContent = title;
   span.style.fontWeight = "bold";
@@ -118,3 +120,24 @@ function createNewTask(title, body) {
   return { ...newTask };
 }
 /* end of CREATE */
+
+/* begin of DELETE */
+listContainer.addEventListener("click", onDeleteHandler);
+
+function deleteTask(id) {
+  const { title } = objOfTasks[id];
+  const isConfirmed = confirm(`Want to delete task: ${title}?`);
+  if (!isConfirmed) return;
+  const taskElement = document.querySelector(`[data-task-id="${id}"]`);
+  taskElement.remove();
+  delete objOfTasks[id];
+}
+
+function onDeleteHandler({ target }) {
+  if (target.classList.contains("delete-btn")) {
+    const btnParent = target.closest("[data-task-id]");
+    const id = btnParent.dataset.taskId;
+    deleteTask(id);
+  }
+}
+/* end of DELETE */
