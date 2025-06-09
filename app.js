@@ -78,3 +78,43 @@ function renderAllTasks(tasksObj) {
 
 renderAllTasks(objOfTasks);
 /* end of READ */
+
+/* begin of CREATE */
+const form = document.forms["addTask"];
+const inputTitle = form.elements["title"];
+const inputBody = form.elements["body"];
+
+form.addEventListener("submit", onFormsSubmitHandler);
+
+function onFormsSubmitHandler(e) {
+  e.preventDefault();
+
+  const titleValue = inputTitle.value;
+  const bodyValue = inputBody.value;
+
+  if (!titleValue || !bodyValue) {
+    alert("Please enter the titile and body");
+    return;
+  }
+
+  const newTask = createNewTask(titleValue, bodyValue);
+  const taskElement = createTaskElement(newTask);
+
+  listContainer.insertAdjacentElement("afterbegin", taskElement);
+
+  form.reset();
+}
+
+function createNewTask(title, body) {
+  const newTask = {
+    title,
+    body,
+    completed: false,
+    _id: `task-${Math.random()}`,
+  };
+
+  objOfTasks[newTask._id] = newTask;
+
+  return { ...newTask };
+}
+/* end of CREATE */
