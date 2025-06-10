@@ -2,28 +2,26 @@ const tasks = [
   {
     _id: "5d2ca9e2e03d40b326596aa7",
     completed: true,
-    body: "Occaecat non ea quis occaecat ad culpa amet deserunt incididunt elit fugiat pariatur. Exercitation commodo culpa in veniam proident laboris in. Excepteur cupidatat eiusmod dolor consectetur exercitation nulla aliqua veniam fugiat irure mollit. Eu dolor dolor excepteur pariatur aute do do ut pariatur consequat reprehenderit deserunt.\r\n",
-    title: "Eu ea incididunt sunt consectetur fugiat non.",
+    body: "Rent a bike for the upcoming weekend.\r\n",
+    title: "Contact bike hire",
   },
   {
     _id: "5d2ca9e29c8a94095c1288e0",
     completed: false,
-    body: "Aliquip cupidatat ex adipisicing veniam do tempor. Lorem nulla adipisicing et esse cupidatat qui deserunt in fugiat duis est qui. Est adipisicing ipsum qui cupidatat exercitation. Cupidatat aliqua deserunt id deserunt excepteur nostrud culpa eu voluptate excepteur. Cillum officia proident anim aliquip. Dolore veniam qui reprehenderit voluptate non id anim.\r\n",
-    title:
-      "Deserunt laborum id consectetur pariatur veniam occaecat occaecat tempor voluptate pariatur nulla reprehenderit ipsum.",
+    body: "Buy those red shoes fom mom birthday. Or maybe the perfume from Chloe that she likes\r\n",
+    title: "Gift for mom",
   },
   {
     _id: "5d2ca9e2e03d40b3232496aa7",
     completed: true,
-    body: "Occaecat non ea quis occaecat ad culpa amet deserunt incididunt elit fugiat pariatur. Exercitation commodo culpa in veniam proident laboris in. Excepteur cupidatat eiusmod dolor consectetur exercitation nulla aliqua veniam fugiat irure mollit. Eu dolor dolor excepteur pariatur aute do do ut pariatur consequat reprehenderit deserunt.\r\n",
-    title: "Eu ea incididunt sunt consectetur fugiat non.",
+    body: "Go through the boxes and check there. If don't find, order a new copy online.\r\n",
+    title: "Find the book you bought in Amsterdam a year ago",
   },
   {
     _id: "5d2ca9e29c8a94095564788e0",
     completed: false,
-    body: "Aliquip cupidatat ex adipisicing veniam do tempor. Lorem nulla adipisicing et esse cupidatat qui deserunt in fugiat duis est qui. Est adipisicing ipsum qui cupidatat exercitation. Cupidatat aliqua deserunt id deserunt excepteur nostrud culpa eu voluptate excepteur. Cillum officia proident anim aliquip. Dolore veniam qui reprehenderit voluptate non id anim.\r\n",
-    title:
-      "Deserunt laborum id consectetur pariatur veniam occaecat occaecat tempor voluptate pariatur nulla reprehenderit ipsum.",
+    body: "Find cheap flights to Italy or Croatia. Book the restaurants for lunch and dinners. Check if you have all the summer essentials (swimsuit, sunglasses, Birkenstocks)  \r\n",
+    title: "Plan summer holidays! URGENT!",
   },
 ];
 
